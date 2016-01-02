@@ -1,29 +1,26 @@
-import codecs
-import os
+from distutils.core import setup
 
-from setuptools import setup, find_packages
-
-
-def read(filepath):
-    filepath = os.path.join(os.path.dirname(__file__), filepath)
-    return codecs.open(filepath, 'r', 'utf-8').read()
-
-description = read('README.md')
 
 setup(
     name="t77-date",
     version='0.1',
-    description='',
-    long_description=description,
     author="Tomasz Jakub Rup",
     author_email="tomasz.rup@gmail.com",
-    license='MIT',
     url='https://github.com/tomi77/python-t77-date',
-    packages=find_packages(),
+    description='',
+    long_description='',
     classifiers=[
-        'Programming Language :: Python',
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
+        'Topic :: Software Development',
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Utilities',
     ],
-    zip_safe=False,
-    test_suite="tests",
+    license='MIT',
+    packages=['t77_date']
 )

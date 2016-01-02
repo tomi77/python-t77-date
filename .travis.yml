@@ -6,6 +6,6 @@ install:
   - pip install -r requirements.txt
   - pip install coveralls
 script:
-  - coverage run setup.py test
+  - coverage run -m unittest discover -s tests -p *_test.py
 after_success:
   - coveralls
