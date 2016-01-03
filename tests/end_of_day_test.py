@@ -1,7 +1,7 @@
 from datetime import datetime
 import unittest
 
-from t77_date.date import end_of_day
+from t77_date.datetime import end_of_day
 
 
 class EndOfDayTestCase(unittest.TestCase):

@@ -1,7 +1,7 @@
 from datetime import datetime
 import unittest
 
-from t77_date.date import start_of_month
+from t77_date.datetime import start_of_month
 
 
 class StartOfMonthTestCase(unittest.TestCase):
