@@ -3,7 +3,7 @@ from datetime import timedelta
 
 def start_of_day(date):
     """
-
+    Return a new datetime with values that represent a start of a day.
     :param date: Date to ...
     :type date: datetime.datetime
     :rtype: datetime.datetime
@@ -13,7 +13,7 @@ def start_of_day(date):
 
 def end_of_day(date):
     """
-
+    Return a new datetime with values that represent a end of a day.
     :param date: Date to ...
     :type date: datetime.datetime
     :rtype: datetime.datetime
@@ -23,7 +23,7 @@ def end_of_day(date):
 
 def start_of_month(date):
     """
-
+    Return a new datetime with values that represent a start of a month.
     :param date: Date to ...
     :type date: datetime.datetime
     :rtype: datetime.datetime
@@ -33,7 +33,7 @@ def start_of_month(date):
 
 def end_of_month(date):
     """
-
+    Return a new datetime with values that represent a end of a month.
     :param date: Date to ...
     :type date: datetime.datetime
     :rtype: datetime.datetime
