@@ -7,7 +7,7 @@ setup(
     author="Tomasz Jakub Rup",
     author_email="tomasz.rup@gmail.com",
     url='https://github.com/tomi77/python-t77-date',
-    description='',
+    description='A set of functions related with dates',
     long_description='',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
