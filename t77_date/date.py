@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
 from datetime import timedelta
-
-from dateutil.relativedelta import relativedelta
 
 
 def start_of_day(date):
@@ -41,4 +38,7 @@ def end_of_month(date):
     :type date: datetime.datetime
     :rtype: datetime.datetime
     """
-    return start_of_month(date) + relativedelta(months=1) - timedelta(microseconds=1)
+    if date.month == 12:
+        return start_of_month(date).replace(year=date.year + 1, month=1) - timedelta(microseconds=1)
+    else:
+        return start_of_month(date).replace(month=date.month + 1) - timedelta(microseconds=1)
