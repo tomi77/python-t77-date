@@ -1,9 +1,9 @@
-from distutils.core import setup
+from setuptools import setup
 
 
 setup(
     name="t77-date",
-    version='0.1',
+    version='0.2',
     author="Tomasz Jakub Rup",
     author_email="tomasz.rup@gmail.com",
     url='https://github.com/tomi77/python-t77-date',
