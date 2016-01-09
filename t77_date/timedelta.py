@@ -19,7 +19,7 @@ def timedelta_to_seconds(val, with_microseconds=False):
     if type(val) != timedelta:
         raise TypeError('')
 
-    microseconds = with_microseconds and val.microseconds / MICROSECONDS_IN_SECOND * 1.0 or 0
+    microseconds = with_microseconds and 1.0 * val.microseconds / MICROSECONDS_IN_SECOND or 0
 
     return val.days * SECONDS_IN_DAY + val.seconds + microseconds
 
