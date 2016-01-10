@@ -12,10 +12,13 @@ def timedelta_to_seconds(val, with_microseconds=False):
     :type val: datetime.timedelta
     :param with_microseconds:
     :type with_microseconds: bool
-    :return: seconds/seconds with microseconds
-    :rtype: int/float
+    :return: seconds/seconds with microseconds or None if val is None
+    :rtype: int/float/None
     :raise: TypeError when val is not timedelta
     """
+    if val is None:
+        return None
+
     if type(val) != timedelta:
         raise TypeError('')
 
@@ -31,10 +34,13 @@ def timedelta_to_str(val, with_microseconds=False):
     :type val: datetime.timedelta
     :param with_microseconds:
     :type with_microseconds: bool
-    :return: String representation of datetime.timedelta
-    :rtype: string
+    :return: String representation of datetime.timedelta or None if val is None
+    :rtype: string/None
     :raise: TypeError when val is not timedelta
     """
+    if val is None:
+        return None
+
     if type(val) != timedelta:
         raise TypeError('')
 
