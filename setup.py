@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="t77-date",
-    version='0.2',
+    version='0.2.1',
     author="Tomasz Jakub Rup",
     author_email="tomasz.rup@gmail.com",
     url='https://github.com/tomi77/python-t77-date',
