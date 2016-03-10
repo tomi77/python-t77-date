@@ -10,7 +10,7 @@ setup(
     author_email="tomasz.rup@gmail.com",
     url='https://github.com/tomi77/python-t77-date',
     description='A set of functions related with dates',
-    long_description=open("README.md").read(),
+    long_description=open("README.rst").read(),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
