@@ -29,5 +29,6 @@ setup(
         'Topic :: Utilities',
     ],
     license='MIT',
-    packages=find_packages(exclude=('tests',))
+    packages=find_packages(exclude=('tests',)),
+    install_requires=['six']
 )
