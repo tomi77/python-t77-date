@@ -3,7 +3,7 @@ python:
   - "2.7"
   - "3.5"
 install:
-  - pip install coveralls
+  - pip install coveralls six
 script:
   - coverage run -m unittest discover -s tests -p *_test.py
 after_success:
