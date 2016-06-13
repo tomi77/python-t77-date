@@ -18,13 +18,9 @@ MICROSECONDS_IN_DAY = MICROSECONDS_IN_SECOND * SECONDS_IN_DAY
 
 INTERVAL_REGEX_STR = r'''
     ^
-    ((?P<days>\d+)\ days?,\ )? # Optional xx days,
-    (?P<hours>\d+)             # HH:mm:ss
-    :
-    (?P<minutes>\d+)
-    :
-    (?P<seconds>\d+)
-    (\.(?P<microseconds>\d+))? # Optional microseconds
+    ((?P<days>\d+)\ days?,\ )?                                 # Optional days
+    (?P<hours>\d+):(?P<minutes>[0-5]?\d):(?P<seconds>[0-5]?\d) # HH:mm:ss
+    (\.(?P<microseconds>\d+))?                                 # Optional microseconds
     $
 '''
 INTERVAL_REGEX = re.compile(INTERVAL_REGEX_STR, re.VERBOSE)
