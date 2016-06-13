@@ -4,8 +4,8 @@ from datetime import timedelta
 
 import six
 
-from .constants import MICROSECONDS_IN_SECOND, SECONDS_IN_DAY, SECONDS_IN_HOUR, SECONDS_IN_MINUTE, HOURS_IN_DAY, \
-    INTERVAL_REGEX
+from .constants import MICROSECONDS_IN_SECOND, SECONDS_IN_DAY, SECONDS_IN_HOUR, \
+    SECONDS_IN_MINUTE, HOURS_IN_DAY, INTERVAL_REGEX
 
 
 def timedelta_to_seconds(val, with_microseconds=False):
