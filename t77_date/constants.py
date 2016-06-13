@@ -16,4 +16,14 @@ MICROSECONDS_IN_MINUTE = MICROSECONDS_IN_SECOND * SECONDS_IN_MINUTE
 MICROSECONDS_IN_HOUR = MICROSECONDS_IN_SECOND * SECONDS_IN_HOUR
 MICROSECONDS_IN_DAY = MICROSECONDS_IN_SECOND * SECONDS_IN_DAY
 
-INTERVAL_REGEX = re.compile('^((?P<days>\d+) days?, )?(?P<hours>\d+):(?P<minutes>\d+):(?P<seconds>\d+)$')
+INTERVAL_REGEX_STR = r'''
+    ^
+    ((?P<days>\d+)\ days?,\ )? # Optional xx days,
+    (?P<hours>\d+)             # HH:mm:ss
+    :
+    (?P<minutes>\d+)
+    :
+    (?P<seconds>\d+)
+    $
+'''
+INTERVAL_REGEX = re.compile(INTERVAL_REGEX_STR, re.VERBOSE)
