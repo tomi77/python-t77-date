@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 import unittest
 
 from t77_date.datetime import end_of_month
@@ -88,3 +88,8 @@ class EndOfMonthTestCase(unittest.TestCase):
         december = datetime(2015, 12, 6, 12, 45, 23, 123)
         eom = end_of_month(december)
         self.assertEqual(eom, datetime(2015, 12, 31, 23, 59, 59, 999999))
+
+    def test_date(self):
+        now = date.today()
+        eod = end_of_month(now)
+        self.assertNotEqual(now, eod)

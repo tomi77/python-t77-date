@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 import unittest
 
 from t77_date.datetime import end_of_day
@@ -14,5 +14,10 @@ class EndOfDayTestCase(unittest.TestCase):
     def test_now(self):
         """Ending of day at 23:59:59.999999"""
         now = datetime.now()
+        eod = end_of_day(now)
+        self.assertEqual(eod, datetime(now.year, now.month, now.day, 23, 59, 59, 999999))
+
+    def test_date(self):
+        now = date.today()
         eod = end_of_day(now)
         self.assertEqual(eod, datetime(now.year, now.month, now.day, 23, 59, 59, 999999))
