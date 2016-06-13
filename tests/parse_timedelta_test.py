@@ -11,32 +11,37 @@ class ParseTimedeltaTestCase(unittest.TestCase):
 
     def test_not_str(self):
         """parse_timedelta throw TypeError when value is not str"""
-        with self.assertRaises(TypeError):
-            parse_timedelta([])
-        with self.assertRaises(TypeError):
-            parse_timedelta({})
-        with self.assertRaises(TypeError):
-            parse_timedelta(object())
-        with self.assertRaises(TypeError):
-            parse_timedelta(12)
-        with self.assertRaises(TypeError):
-            parse_timedelta(datetime.now())
+        for invalid in [[], {}, object(), 12, datetime.now()]:
+            with self.assertRaises(TypeError):
+                parse_timedelta(invalid)
 
     def test_incorrect(self):
         """parse_timedelta throw ValueError when value is invalid timedelta"""
-        with self.assertRaises(ValueError):
-            parse_timedelta('invalid timedelta')
+        for invalid in ['invalid timedelta']:
+            with self.assertRaises(ValueError):
+                parse_timedelta(invalid)
 
     def test_hours_wo_day(self):
-        self.assertEqual(parse_timedelta('1:11:12'), timedelta(hours=1, minutes=11, seconds=12))
-        self.assertEqual(parse_timedelta('10:11:12'), timedelta(hours=10, minutes=11, seconds=12))
-        self.assertEqual(parse_timedelta('25:11:12'), timedelta(days=1, hours=1, minutes=11, seconds=12))
+        data = {
+            '1:11:12': timedelta(hours=1, minutes=11, seconds=12),
+            '10:11:12': timedelta(hours=10, minutes=11, seconds=12),
+            '25:11:12': timedelta(days=1, hours=1, minutes=11, seconds=12),
+        }
+        for val, expected in data.items():
+            self.assertEqual(parse_timedelta(val), expected)
 
     def test_hours_and_days(self):
-        self.assertEqual(parse_timedelta('1 day, 10:11:12'), timedelta(days=1, hours=10, minutes=11, seconds=12))
-        self.assertEqual(parse_timedelta('2 days, 10:11:12'), timedelta(days=2, hours=10, minutes=11, seconds=12))
+        data = {
+            '1 day, 10:11:12': timedelta(days=1, hours=10, minutes=11, seconds=12),
+            '2 days, 10:11:12': timedelta(days=2, hours=10, minutes=11, seconds=12),
+        }
+        for val, expected in data.items():
+            self.assertEqual(parse_timedelta(val), expected)
 
     def test_microseconds(self):
-        self.assertEqual(parse_timedelta('1:11:12.13'), timedelta(hours=1, minutes=11, seconds=12, microseconds=13))
-        self.assertEqual(parse_timedelta('1 day, 10:11:12.13'), timedelta(days=1, hours=10, minutes=11, seconds=12,
-                                                                          microseconds=13))
+        data = {
+            '1:11:12.13': timedelta(hours=1, minutes=11, seconds=12, microseconds=13),
+            '1 day, 10:11:12.13': timedelta(days=1, hours=10, minutes=11, seconds=12, microseconds=13),
+        }
+        for val, expected in data.items():
+            self.assertEqual(parse_timedelta(val), expected)
