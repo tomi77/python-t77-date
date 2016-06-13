@@ -1,3 +1,4 @@
+"""datetime.datetime and datetime.date related functions"""
 from __future__ import absolute_import
 from datetime import timedelta, date, datetime
 
