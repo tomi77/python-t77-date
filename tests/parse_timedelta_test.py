@@ -35,3 +35,8 @@ class ParseTimedeltaTestCase(unittest.TestCase):
     def test_hours_and_days(self):
         self.assertEqual(parse_timedelta('1 day, 10:11:12'), timedelta(days=1, hours=10, minutes=11, seconds=12))
         self.assertEqual(parse_timedelta('2 days, 10:11:12'), timedelta(days=2, hours=10, minutes=11, seconds=12))
+
+    def test_microseconds(self):
+        self.assertEqual(parse_timedelta('1:11:12.13'), timedelta(hours=1, minutes=11, seconds=12, microseconds=13))
+        self.assertEqual(parse_timedelta('1 day, 10:11:12.13'), timedelta(days=1, hours=10, minutes=11, seconds=12,
+                                                                          microseconds=13))

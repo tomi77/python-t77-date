@@ -24,6 +24,7 @@ INTERVAL_REGEX_STR = r'''
     (?P<minutes>\d+)
     :
     (?P<seconds>\d+)
+    (\.(?P<microseconds>\d+))? # .ms
     $
 '''
 INTERVAL_REGEX = re.compile(INTERVAL_REGEX_STR, re.VERBOSE)
