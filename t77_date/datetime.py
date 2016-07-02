@@ -54,6 +54,17 @@ def end_of_month(val):
         return start_of_month(val).replace(month=val.month + 1) - timedelta(microseconds=1)
 
 
+def _set_week_day(val, week_day, val_weekday, sign):
+    if val_weekday == week_day:
+        return val
+
+    diff = sign * (val_weekday - week_day)
+    diff = -diff if diff < 0 else 7 - diff
+    val += sign * timedelta(days=diff)
+
+    return val
+
+
 def set_next_iso_week_day(val, iso_week_day):
     """
     Set ISO week day.
@@ -64,12 +75,7 @@ def set_next_iso_week_day(val, iso_week_day):
     :type iso_week_day: int
     :return: datetime.datetime | datetime.date
     """
-    if val.isoweekday() == iso_week_day:
-        return val
-    diff = val.isoweekday() - iso_week_day
-    diff = -diff if diff < 0 else 7 - diff
-    val += timedelta(days=diff)
-    return val
+    return _set_week_day(val, iso_week_day, val.isoweekday(), sign=1)
 
 
 def set_prev_iso_week_day(val, iso_week_day):
@@ -82,12 +88,7 @@ def set_prev_iso_week_day(val, iso_week_day):
     :type iso_week_day: int
     :return: datetime.datetime | datetime.date
     """
-    if val.isoweekday() == iso_week_day:
-        return val
-    diff = iso_week_day - val.isoweekday()
-    diff = -diff if diff < 0 else 7 - diff
-    val -= timedelta(days=diff)
-    return val
+    return _set_week_day(val, iso_week_day, val.isoweekday(), sign=-1)
 
 
 def set_next_week_day(val, week_day):
@@ -100,12 +101,7 @@ def set_next_week_day(val, week_day):
     :type week_day: int
     :return: datetime.datetime | datetime.date
     """
-    if val.weekday() == week_day:
-        return val
-    diff = val.weekday() - week_day
-    diff = -diff if diff < 0 else 7 - diff
-    val += timedelta(days=diff)
-    return val
+    return _set_week_day(val, week_day, val.weekday(), sign=1)
 
 
 def set_prev_week_day(val, week_day):
@@ -118,9 +114,4 @@ def set_prev_week_day(val, week_day):
     :type week_day: int
     :return: datetime.datetime | datetime.date
     """
-    if val.weekday() == week_day:
-        return val
-    diff = week_day - val.weekday()
-    diff = -diff if diff < 0 else 7 - diff
-    val -= timedelta(days=diff)
-    return val
+    return _set_week_day(val, week_day, val.weekday(), sign=-1)
