@@ -8,8 +8,8 @@ class StartOfDayTestCase(unittest.TestCase):
     def test_new_object(self):
         """start_of_day create a new object"""
         now = datetime.now()
-        eod = start_of_day(now)
-        self.assertNotEqual(now, eod)
+        sod = start_of_day(now)
+        self.assertNotEqual(now, sod)
 
     def test_now(self):
         """Beginning of day at 00:00:00"""

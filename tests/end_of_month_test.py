@@ -8,8 +8,8 @@ class EndOfMonthTestCase(unittest.TestCase):
     def test_new_object(self):
         """end_of_month create a new object"""
         now = datetime.now()
-        eod = end_of_month(now)
-        self.assertNotEqual(now, eod)
+        eom = end_of_month(now)
+        self.assertNotEqual(now, eom)
 
     def test_january(self):
         """Ending of january at 23:59:59.999999 31st day"""
