@@ -4,8 +4,8 @@ from datetime import timedelta
 
 import six
 
-from .constants import MICROSECONDS_IN_SECOND, SECONDS_IN_DAY, SECONDS_IN_HOUR, \
-    SECONDS_IN_MINUTE, HOURS_IN_DAY, INTERVAL_REGEX
+from .constants import MICROSECONDS_IN_SECOND, SECONDS_IN_DAY, \
+    SECONDS_IN_HOUR, SECONDS_IN_MINUTE, HOURS_IN_DAY, INTERVAL_REGEX
 
 
 def timedelta_to_seconds(val, with_microseconds=False):
@@ -25,7 +25,8 @@ def timedelta_to_seconds(val, with_microseconds=False):
     if type(val) != timedelta:
         raise TypeError('')
 
-    microseconds = with_microseconds and 1.0 * val.microseconds / MICROSECONDS_IN_SECOND or 0
+    microseconds = 1.0 * val.microseconds / MICROSECONDS_IN_SECOND \
+        if with_microseconds else 0
 
     return val.days * SECONDS_IN_DAY + val.seconds + microseconds
 
@@ -52,7 +53,8 @@ def timedelta_to_str(val, with_microseconds=False):
     minutes, seconds = divmod(remainder, SECONDS_IN_MINUTE)
 
     if with_microseconds:
-        return '%02d:%02d:%02d.%06d' % (hours, minutes, seconds, val.microseconds)
+        return '%02d:%02d:%02d.%06d' % (hours, minutes, seconds,
+                                        val.microseconds)
     else:
         return '%02d:%02d:%02d' % (hours, minutes, seconds)
 
@@ -79,4 +81,5 @@ def parse_timedelta(value):
         data = match.groupdict()
         return timedelta(**dict((key, int(data[key] or 0)) for key in data))
     else:
-        raise ValueError("Value '%s' doesn't appear to be a valid timedelta string" % value)
+        raise ValueError("Value '%s' doesn't appear to be a valid timedelta "
+                         "string" % value)
