@@ -11,8 +11,17 @@ python-t77-date
 
 A set of functions related with dates
 
-datetime
---------
+Installation
+------------
+
+Install via ``pip``
+
+::
+
+   pip install t77_date
+
+datetime module
+---------------
 
 start_of_day
 ~~~~~~~~~~~~
