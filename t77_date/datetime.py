@@ -67,33 +67,7 @@ def _set_week_day(val, week_day, val_weekday, sign):
     return val
 
 
-def set_next_iso_week_day(val, iso_week_day):
-    """
-    Set ISO week day.
-    New date will be greater or equal than input date.
-    :param val: datetime or date
-    :type val: datetime.datetime | datetime.date
-    :param iso_week_day: ISO week day to set
-    :type iso_week_day: int
-    :return: datetime.datetime | datetime.date
-    """
-    return _set_week_day(val, iso_week_day, val.isoweekday(), sign=1)
-
-
-def set_prev_iso_week_day(val, iso_week_day):
-    """
-    Set ISO week day.
-    New date will be less or equal than input date.
-    :param val: datetime or date
-    :type val: datetime.datetime | datetime.date
-    :param iso_week_day: ISO week day to set
-    :type iso_week_day: int
-    :return: datetime.datetime | datetime.date
-    """
-    return _set_week_day(val, iso_week_day, val.isoweekday(), sign=-1)
-
-
-def set_next_week_day(val, week_day):
+def set_next_week_day(val, week_day, iso=False):
     """
     Set week day.
     New date will be greater or equal than input date.
@@ -101,12 +75,15 @@ def set_next_week_day(val, week_day):
     :type val: datetime.datetime | datetime.date
     :param week_day: Week day to set
     :type week_day: int
+    :param iso: week_day in ISO format, or not
+    :type iso: bool
     :return: datetime.datetime | datetime.date
     """
-    return _set_week_day(val, week_day, val.weekday(), sign=1)
+    return _set_week_day(val, week_day,
+                         val.isoweekday() if iso else val.weekday(), sign=1)
 
 
-def set_prev_week_day(val, week_day):
+def set_prev_week_day(val, week_day, iso=False):
     """
     Set week day.
     New date will be less or equal than input date.
@@ -114,6 +91,9 @@ def set_prev_week_day(val, week_day):
     :type val: datetime.datetime | datetime.date
     :param week_day: Week day to set
     :type week_day: int
+    :param iso: week_day in ISO format, or not
+    :type iso: bool
     :return: datetime.datetime | datetime.date
     """
-    return _set_week_day(val, week_day, val.weekday(), sign=-1)
+    return _set_week_day(val, week_day,
+                         val.isoweekday() if iso else val.weekday(), sign=-1)
