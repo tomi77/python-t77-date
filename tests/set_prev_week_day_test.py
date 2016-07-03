@@ -1,8 +1,7 @@
-from datetime import datetime, date
 import unittest
+from datetime import datetime, date
 
-from t77_date.constants import FRIDAY, ISO_FRIDAY
-from t77_date.datetime import set_prev_week_day
+from t77_date import FRIDAY, ISO_FRIDAY, set_prev_week_day
 
 
 class SetNextISOWeekDayTestCase(unittest.TestCase):

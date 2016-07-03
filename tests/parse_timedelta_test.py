@@ -1,7 +1,7 @@
 import unittest
 from datetime import timedelta, datetime
 
-from t77_date.timedelta import parse_timedelta
+from t77_date import parse_timedelta
 
 
 class ParseTimedeltaTestCase(unittest.TestCase):

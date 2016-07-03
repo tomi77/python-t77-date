@@ -1,7 +1,7 @@
-from datetime import datetime, date
 import unittest
+from datetime import datetime, date
 
-from t77_date.datetime import start_of_day
+from t77_date import start_of_day
 
 
 class StartOfDayTestCase(unittest.TestCase):

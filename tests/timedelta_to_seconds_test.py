@@ -1,7 +1,7 @@
 import unittest
 from datetime import timedelta
 
-from t77_date.timedelta import timedelta_to_seconds
+from t77_date import timedelta_to_seconds
 
 
 class TimedeltaToSecondsTestCase(unittest.TestCase):

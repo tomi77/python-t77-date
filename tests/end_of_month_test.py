@@ -1,7 +1,7 @@
-from datetime import datetime, date
 import unittest
+from datetime import datetime, date
 
-from t77_date.datetime import end_of_month
+from t77_date import end_of_month
 
 
 class EndOfMonthTestCase(unittest.TestCase):
