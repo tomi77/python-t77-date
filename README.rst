@@ -75,34 +75,6 @@ Example
    >>> print(eom)
    2016-07-31 23:59:59.999999
 
-set_next_iso_week_day
-~~~~~~~~~~~~~~~~~~~~~
-
-Set ISO week day.
-New date will be greater or equal than input date.
-
-Example
-::
-
-   >>> saturday = datetime(2016, 7, 2, 21, 49, 12)
-   >>> next_friday = set_next_iso_week_day(saturday, ISO_FRIDAY)
-   >>> print(next_friday)
-   2016-07-08 21:49:12
-
-set_prev_iso_week_day
-~~~~~~~~~~~~~~~~~~~~~
-
-Set ISO week day.
-New date will be less or equal than input date.
-
-Example
-::
-
-   >>> saturday = datetime(2016, 7, 2, 12)
-   >>> prev_friday = set_prev_iso_week_day(saturday, ISO_FRIDAY)
-   >>> print(prev_friday)
-   2016-07-01 21:49:12
-
 set_next_week_day
 ~~~~~~~~~~~~~~~~~
 
@@ -113,7 +85,10 @@ Example
 ::
 
    >>> saturday = datetime(2016, 7, 2, 21, 49, 12)
-   >>> next_friday = set_next_week_day(saturday, FRIDAY)
+   >>> next_friday = set_next_week_day(saturday, ISO_FRIDAY, iso=True)
+   >>> print(next_friday)
+   2016-07-08 21:49:12
+   >>> next_friday = set_next_week_day(saturday, FRIDAY, iso=False)
    >>> print(next_friday)
    2016-07-08 21:49:12
 
@@ -127,6 +102,9 @@ Example
 ::
 
    >>> saturday = datetime(2016, 7, 2, 12)
-   >>> prev_friday = set_prev_week_day(saturday, FRIDAY)
+   >>> prev_friday = set_prev_week_day(saturday, ISO_FRIDAY, iso=True)
+   >>> print(prev_friday)
+   2016-07-01 21:49:12
+   >>> prev_friday = set_prev_week_day(saturday, FRIDAY, iso=False)
    >>> print(prev_friday)
    2016-07-01 21:49:12
