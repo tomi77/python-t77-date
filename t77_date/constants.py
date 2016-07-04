@@ -1,7 +1,4 @@
 """Date related constants"""
-import re
-
-
 HOURS_IN_DAY = 24
 
 MINUTES_IN_HOUR = 60
@@ -23,7 +20,6 @@ INTERVAL_REGEX_STR = r'''
     (\.(?P<microseconds>\d+))?                                 # Optional microseconds
     $
 '''
-INTERVAL_REGEX = re.compile(INTERVAL_REGEX_STR, re.VERBOSE)
 
 ISO_MONDAY = 1
 ISO_TUESDAY = 2

@@ -1,11 +1,15 @@
 """datetime.timedelta related functions"""
 from __future__ import absolute_import
+
+import re
 from datetime import timedelta
 
 import six
 
 from .constants import MICROSECONDS_IN_SECOND, SECONDS_IN_DAY, \
-    SECONDS_IN_HOUR, SECONDS_IN_MINUTE, HOURS_IN_DAY, INTERVAL_REGEX
+    SECONDS_IN_HOUR, SECONDS_IN_MINUTE, HOURS_IN_DAY, INTERVAL_REGEX_STR
+
+INTERVAL_REGEX = re.compile(INTERVAL_REGEX_STR, re.VERBOSE)
 
 
 def timedelta_to_seconds(val, with_microseconds=False):
