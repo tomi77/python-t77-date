@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="t77-date",
-    version='0.4.0',
+    version='0.5.0',
     author="Tomasz Jakub Rup",
     author_email="tomasz.rup@gmail.com",
     url='https://github.com/tomi77/python-t77-date',
