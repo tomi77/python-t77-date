@@ -1,4 +1,6 @@
 """dateutil.tz related functions"""
+from __future__ import absolute_import
+
 import re
 from datetime import datetime
 
@@ -8,8 +10,9 @@ TIME_ZONES_RE = re.compile(r'^(\w+)_to_(\w+)')
 
 
 class TZConverter(object):
-    @staticmethod
-    def _replace_tz(val, tzfrom, tzto):
+    """Convert datetime.datetime object between timezones"""
+
+    def __call__(self, val, tzfrom, tzto):
         if not isinstance(val, datetime):
             raise ValueError('value must be a datetime.datetime object')
 
@@ -25,13 +28,13 @@ class TZConverter(object):
             tzto = getattr(dateutil.tz, 'tz%s' % time_zones[0][1])
 
             if tzfrom is None:
-                raise ValueError('Invalid tz %s.' % tzfrom)
+                raise ValueError('Invalid tz "%s".' % tzfrom)
             if tzto is None:
-                raise ValueError('Invalid tz %s.' % tzto)
+                raise ValueError('Invalid tz "%s".' % tzto)
 
-            return lambda val: self._replace_tz(val, tzfrom(), tzto())
+            return lambda val: self(val, tzfrom(), tzto())
         else:
-            raise AttributeError('Invalid format %s. Proper is tz_to_tz.' % item)
+            raise AttributeError('Invalid format "%s". Proper is "tz_to_tz".' % item)
 
 
 tzconverter = TZConverter()
