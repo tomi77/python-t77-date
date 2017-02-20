@@ -108,3 +108,55 @@ Example
    >>> prev_friday = set_prev_week_day(saturday, FRIDAY, iso=False)
    >>> print(prev_friday)
    2016-07-01 21:49:12
+
+timedelta module
+----------------
+
+timedelta_to_seconds
+~~~~~~~~~~~~~~~~~~~~
+
+Convert `datetime.timedelta` to seconds.
+
+Example
+::
+
+   >>> td = timedelta(days=1, microseconds=1)
+   >>> seconds = timedelta_to_seconds(td)
+   >>> print(seconds)
+   86400
+   >>> seconds = timedelta_to_seconds(td, with_microseconds=True)
+   >>> print(seconds)
+   86400.000001
+
+timedelta_to_str
+~~~~~~~~~~~~~~~~
+
+String representation of `datetime.timedelta`.
+
+Example
+::
+
+   >>> td = timedelta(days=5, microseconds=1)
+   >>> td_str = timedelta_to_str(td)
+   >>> print(td_str)
+   '120:00:00'
+   >>> td_str = timedelta_to_str(val, with_microseconds=True)
+   >>> print(td_str)
+   '120:00:00.000001'
+
+parse_timedelta
+~~~~~~~~~~~~~~~
+
+Parses a string and return a `datetime.timedelta`.
+
+Example
+::
+
+   >>> value = '1:11:12.13'
+   >>> td = parse_timedelta(value)
+   >>> print(td)
+   1:11:12.000013
+   >>> value = '1 day, 10:11:12.13'
+   >>> td = parse_timedelta(value)
+   >>> print(td)
+   1 day, 1:11:12.000013

@@ -12,60 +12,60 @@ from .constants import MICROSECONDS_IN_SECOND, SECONDS_IN_DAY, \
 INTERVAL_REGEX = re.compile(INTERVAL_REGEX_STR, re.VERBOSE)
 
 
-def timedelta_to_seconds(val, with_microseconds=False):
+def timedelta_to_seconds(value, with_microseconds=False):
     """
     Convert datetime.timedelta to seconds
-    :param val: timedelta to convert
-    :type val: datetime.timedelta
+    :param value: timedelta to convert
+    :type value: datetime.timedelta
     :param with_microseconds:
     :type with_microseconds: bool
     :return: seconds/seconds with microseconds or None if val is None
     :rtype: int/float/None
     :raise: TypeError when val is not timedelta
     """
-    if val is None:
+    if value is None:
         return None
 
-    if type(val) != timedelta:
-        raise TypeError('')
+    if not isinstance(value, timedelta):
+        raise TypeError('value must be a datetime.timedelta object')
 
-    microseconds = val.microseconds / MICROSECONDS_IN_SECOND \
+    microseconds = value.microseconds / MICROSECONDS_IN_SECOND \
         if with_microseconds else 0
 
-    return val.days * SECONDS_IN_DAY + val.seconds + microseconds
+    return value.days * SECONDS_IN_DAY + value.seconds + microseconds
 
 
-def timedelta_to_str(val, with_microseconds=False):
+def timedelta_to_str(value, with_microseconds=False):
     """
     String representation of datetime.timedelta
-    :param val: timedelta to convert
-    :type val: datetime.timedelta
+    :param value: timedelta to convert
+    :type value: datetime.timedelta
     :param with_microseconds:
     :type with_microseconds: bool
     :return: String representation of datetime.timedelta or None if val is None
     :rtype: string/None
     :raise: TypeError when val is not timedelta
     """
-    if val is None:
+    if value is None:
         return None
 
-    if type(val) != timedelta:
-        raise TypeError('')
+    if not isinstance(value, timedelta):
+        raise TypeError('value must be a datetime.timedelta object')
 
-    hours, remainder = divmod(val.seconds, SECONDS_IN_HOUR)
-    hours += val.days * HOURS_IN_DAY
+    hours, remainder = divmod(value.seconds, SECONDS_IN_HOUR)
+    hours += value.days * HOURS_IN_DAY
     minutes, seconds = divmod(remainder, SECONDS_IN_MINUTE)
 
     if with_microseconds:
         return '%02d:%02d:%02d.%06d' % (hours, minutes, seconds,
-                                        val.microseconds)
+                                        value.microseconds)
     else:
         return '%02d:%02d:%02d' % (hours, minutes, seconds)
 
 
 def parse_timedelta(value):
     """
-
+    Parses a string and return a datetime.timedelta.
     :param value: string to parse
     :type value: str
     :return: timedelta object or None if vakue is None
