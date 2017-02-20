@@ -1,5 +1,5 @@
 """datetime.timedelta related functions"""
-from __future__ import absolute_import
+from __future__ import absolute_import, division
 
 import re
 from datetime import timedelta
@@ -29,7 +29,7 @@ def timedelta_to_seconds(val, with_microseconds=False):
     if type(val) != timedelta:
         raise TypeError('')
 
-    microseconds = 1.0 * val.microseconds / MICROSECONDS_IN_SECOND \
+    microseconds = val.microseconds / MICROSECONDS_IN_SECOND \
         if with_microseconds else 0
 
     return val.days * SECONDS_IN_DAY + val.seconds + microseconds
