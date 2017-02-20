@@ -30,6 +30,6 @@ setup(
     ],
     license='MIT',
     packages=find_packages(exclude=('tests',)),
-    install_requires=['six'],
+    install_requires=['six', 'python-dateutil'],
     test_suite='tests'
 )
