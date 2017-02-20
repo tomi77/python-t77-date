@@ -1,40 +1,27 @@
 """dateutil.tz related functions"""
-from __future__ import absolute_import
+from __future__ import print_function, division
 
-import re
 from datetime import datetime
 
-import dateutil.tz
-
-TIME_ZONES_RE = re.compile(r'^(\w+)_to_(\w+)')
+from dateutil.tz import tzlocal, tzutc
 
 
-class TZConverter(object):
+def _convert(value, tzfrom, tzto):
     """Convert datetime.datetime object between timezones"""
+    if not isinstance(value, datetime):
+        raise ValueError('value must be a datetime.datetime object')
 
-    def __call__(self, val, tzfrom, tzto):
-        if not isinstance(val, datetime):
-            raise ValueError('value must be a datetime.datetime object')
+    if value.tzinfo is None:
+        value = value.replace(tzinfo=tzfrom)
 
-        if val.tzinfo is None:
-            val = val.replace(tzinfo=tzfrom)
-
-        return val.astimezone(tzto)
-
-    def __getattr__(self, item):
-        if TIME_ZONES_RE.match(item):
-            time_zones = TIME_ZONES_RE.findall(item)
-            tzfrom = getattr(dateutil.tz, 'tz%s' % time_zones[0][0])
-            tzto = getattr(dateutil.tz, 'tz%s' % time_zones[0][1])
-
-            if tzfrom is None:
-                raise ValueError('Invalid tz "%s".' % tzfrom)
-            if tzto is None:
-                raise ValueError('Invalid tz "%s".' % tzto)
-
-            return lambda val: self(val, tzfrom(), tzto())
-        else:
-            raise AttributeError('Invalid format "%s". Proper is "tz_to_tz".' % item)
+    return value.astimezone(tzto)
 
 
-tzconverter = TZConverter()
+def utc_to_local(value):
+    """Convert datetime.datetime time from UTC to local time zone"""
+    return _convert(value, tzutc(), tzlocal())
+
+
+def local_to_utc(value):
+    """Convert datetime.datetime time from local time zone to UTC"""
+    return _convert(value, tzlocal(), tzutc())
