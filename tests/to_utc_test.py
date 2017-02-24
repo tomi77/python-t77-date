@@ -3,34 +3,34 @@ from datetime import datetime
 
 from dateutil.tz import tzutc, tzlocal
 
-from t77_date.tz import utc_to_local
+from t77_date.tz import to_utc
 
 
-class UtcToLocalTestCase(unittest.TestCase):
+class LocalToUtcTestCase(unittest.TestCase):
     def test_datetime_in_utc(self):
         value_in = datetime.now(tz=tzutc())
-        value_out = utc_to_local(value_in)
+        value_out = to_utc(value_in)
         self.assertIsInstance(value_out, datetime)
-        self.assertEqual(value_out.tzinfo, tzlocal())
+        self.assertEqual(value_out.tzinfo, tzutc())
+        self.assertEqual(value_out, value_in)
 
     def test_datetime_in_local(self):
         value_in = datetime.now(tz=tzlocal())
-        value_out = utc_to_local(value_in)
+        value_out = to_utc(value_in)
         self.assertIsInstance(value_out, datetime)
-        self.assertEqual(value_out.tzinfo, tzlocal())
-        self.assertEqual(value_out, value_in)
+        self.assertEqual(value_out.tzinfo, tzutc())
 
     def test_datetime_without_tzinfo(self):
         value_in = datetime.now()
-        value_out = utc_to_local(value_in)
+        value_out = to_utc(value_in)
         self.assertIsInstance(value_out, datetime)
-        self.assertEqual(value_out.tzinfo, tzlocal())
+        self.assertEqual(value_out.tzinfo, tzutc())
 
     def test_invalid_input(self):
         now = datetime.now()
         with self.assertRaises(ValueError):
-            utc_to_local(None)
+            to_utc(None)
         with self.assertRaises(ValueError):
-            utc_to_local(now.toordinal())
+            to_utc(now.toordinal())
         with self.assertRaises(ValueError):
-            utc_to_local(now.isoformat())
+            to_utc(now.isoformat())

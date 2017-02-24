@@ -164,8 +164,8 @@ Example
 tz module
 ---------
 
-local_to_utc
-~~~~~~~~~~~~
+to_utc
+~~~~~~
 
 Convert `datetime.datetime` from local time zone to UTC.
 
@@ -173,14 +173,14 @@ Example
 ::
 
    >>> d1 = datetime.now(tz=tzlocal())
-   >>> d2 = local_to_utc(d1)
+   >>> d2 = to_utc(d1)
    >>> print(d1)
    2017-02-20 13:19:36.511822+01:00
    >>> print(d2)
    2017-02-20 12:19:36.511822+00:00
 
-utc_to_local
-~~~~~~~~~~~~
+to_local
+~~~~~~~~
 
 Convert `datetime.datetime` from UTC to local time zone.
 
@@ -188,7 +188,7 @@ Example
 ::
 
    >>> d1 = datetime.now(tz=tzutc())
-   >>> d2 = utc_to_local(d1)
+   >>> d2 = to_local(d1)
    >>> print(d1)
    2017-02-20 12:19:36.511822+00:00
    >>> print(d2)
