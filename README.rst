@@ -167,7 +167,7 @@ tz module
 to_utc
 ~~~~~~
 
-Convert `datetime.datetime` from local time zone to UTC.
+Convert `datetime.datetime` to UTC.
 
 Example
 ::
@@ -182,7 +182,7 @@ Example
 to_local
 ~~~~~~~~
 
-Convert `datetime.datetime` from UTC to local time zone.
+Convert `datetime.datetime` to local time zone.
 
 Example
 ::
