@@ -6,7 +6,7 @@ from dateutil.tz import tzutc, tzlocal
 from t77_date.tz import to_utc
 
 
-class LocalToUtcTestCase(unittest.TestCase):
+class ToUtcTestCase(unittest.TestCase):
     def test_datetime_in_utc(self):
         value_in = datetime.now(tz=tzutc())
         value_out = to_utc(value_in)
