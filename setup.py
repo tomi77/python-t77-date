@@ -1,3 +1,4 @@
+import sys
 from codecs import open
 
 from setuptools import setup, find_packages
@@ -10,7 +11,7 @@ setup(
     author_email='tomasz.rup@gmail.com',
     url='https://github.com/tomi77/python-t77-date',
     description='A set of functions related with dates',
-    long_description=open('README.rst').read(),
+    long_description='' if sys.version_info[:2] == (3, 4) else open('README.rst').read(),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
