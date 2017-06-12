@@ -68,7 +68,7 @@ def parse_timedelta(value):
     Parses a string and return a datetime.timedelta.
     :param value: string to parse
     :type value: str
-    :return: timedelta object or None if vakue is None
+    :return: timedelta object or None if value is None
     :rtype: timedelta/None
     :raise: TypeError when value is not string
     :raise: ValueError when value is not proper timedelta string
