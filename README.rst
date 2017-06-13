@@ -29,6 +29,7 @@ start_of_day
 Return a new datetime with values that represent a start of a day.
 
 Example
+
 .. sourcecode:: python
 
    >>> dt = datetime(2016, 7, 2, 21, 49, 12)
@@ -42,6 +43,7 @@ end_of_day
 Return a new datetime with values that represent a end of a day.
 
 Example
+
 .. sourcecode:: python
 
    >>> dt = datetime(2016, 7, 2, 21, 49, 12)
@@ -55,6 +57,7 @@ start_of_month
 Return a new datetime with values that represent a start of a month.
 
 Example
+
 .. sourcecode:: python
 
    >>> dt = datetime(2016, 7, 2, 21, 49, 12)
@@ -68,6 +71,7 @@ end_of_month
 Return a new datetime with values that represent a end of a month.
 
 Example
+
 .. sourcecode:: python
 
    >>> dt = datetime(2016, 7, 2, 21, 49, 12)
@@ -82,6 +86,7 @@ Set week day.
 New date will be greater or equal than input date.
 
 Example
+
 .. sourcecode:: python
 
    >>> saturday = datetime(2016, 7, 2, 21, 49, 12)
@@ -99,6 +104,7 @@ Set week day.
 New date will be less or equal than input date.
 
 Example
+
 .. sourcecode:: python
 
    >>> saturday = datetime(2016, 7, 2, 12)
@@ -118,6 +124,7 @@ diff_time
 Calculates datetime.timedelta between two datetime.time values.
 
 Example
+
 .. sourcecode:: python
 
    >>> t1, t2 = time(hour=1), time(hour=2)
@@ -135,6 +142,7 @@ timedelta_to_seconds
 Convert `datetime.timedelta` to seconds.
 
 Example
+
 .. sourcecode:: python
 
    >>> td = timedelta(days=1, microseconds=1)
@@ -151,6 +159,7 @@ timedelta_to_str
 String representation of `datetime.timedelta`.
 
 Example
+
 .. sourcecode:: python
 
    >>> td = timedelta(days=5, microseconds=1)
@@ -167,6 +176,7 @@ parse_timedelta
 Parses a string and return a `datetime.timedelta`.
 
 Example
+
 .. sourcecode:: python
 
    >>> value = '1:11:12.13'
@@ -187,6 +197,7 @@ to_utc
 Convert `datetime.datetime` to UTC.
 
 Example
+
 .. sourcecode:: python
 
    >>> d1 = datetime.now(tz=tzlocal())
@@ -202,6 +213,7 @@ to_local
 Convert `datetime.datetime` to local time zone.
 
 Example
+
 .. sourcecode:: python
 
    >>> d1 = datetime.now(tz=tzutc())
