@@ -1,6 +1,7 @@
 ## master
 
-* Add to_(local|utc) functions
+* Add tz.to_(local|utc) functions
+* Add time.diff_time function
 
 ## 0.5.0
 
