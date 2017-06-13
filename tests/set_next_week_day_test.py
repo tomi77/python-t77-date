@@ -4,7 +4,7 @@ from datetime import datetime, date
 from t77_date import FRIDAY, ISO_FRIDAY, set_next_week_day
 
 
-class SetNextISOWeekDayTestCase(unittest.TestCase):
+class SetNextWeekDayTestCase(unittest.TestCase):
     def test_date_saturday_to_next_friday(self):
         saturday = date(2016, 7, 2)  # SATURDAY
         next_friday = set_next_week_day(saturday, FRIDAY)

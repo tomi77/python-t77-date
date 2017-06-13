@@ -4,7 +4,7 @@ from datetime import timedelta
 from t77_date import timedelta_to_str
 
 
-class TimedeltaToSecondsTestCase(unittest.TestCase):
+class TimedeltaToStrTestCase(unittest.TestCase):
     def test_not_timedelta(self):
         """timedelta_to_str throw TypeError when val is not datetime.timedelta"""
         val = 'not timedelta object'
