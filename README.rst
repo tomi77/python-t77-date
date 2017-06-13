@@ -109,6 +109,23 @@ Example
    >>> print(prev_friday)
    2016-07-01 21:49:12
 
+time module
+-----------
+
+diff_time
+~~~~~~~~~
+
+Calculates datetime.timedelta between two datetime.time values.
+
+Example
+.. sourcecode:: python
+
+   >>> t1, t2 = time(hour=1), time(hour=2)
+   >>> print(diff_time(t2, t1))
+   1:00:00
+   >>> print(diff_time(t1, t2))
+   -1 day, 23:00:00
+
 timedelta module
 ----------------
 
