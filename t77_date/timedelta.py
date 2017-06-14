@@ -1,4 +1,4 @@
-"""datetime.timedelta related functions"""
+"""A set of datetime.timedelta related functions"""
 from __future__ import absolute_import, division
 
 import re

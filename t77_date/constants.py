@@ -1,4 +1,4 @@
-"""Date related constants"""
+"""A set of date related constants"""
 HOURS_IN_DAY = 24
 
 MINUTES_IN_HOUR = 60

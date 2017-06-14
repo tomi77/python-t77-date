@@ -1,4 +1,4 @@
-"""datetime.time related functions"""
+"""A set of datetime.time related functions"""
 from __future__ import absolute_import
 
 from datetime import datetime, time

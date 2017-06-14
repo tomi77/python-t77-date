@@ -23,10 +23,12 @@ Install via ``pip``
 datetime module
 ---------------
 
+A set of `datetime.datetime` and `datetime.date` related functions.
+
 start_of_day
 ~~~~~~~~~~~~
 
-Return a new datetime with values that represent a start of a day.
+Return a new `datetime.datetime` object with values that represent a start of a day.
 
 Example
 
@@ -40,7 +42,7 @@ Example
 end_of_day
 ~~~~~~~~~~
 
-Return a new datetime with values that represent a end of a day.
+Return a new `datetime.datetime` object with values that represent a end of a day.
 
 Example
 
@@ -54,7 +56,7 @@ Example
 start_of_month
 ~~~~~~~~~~~~~~
 
-Return a new datetime with values that represent a start of a month.
+Return a new `datetime.datetime` object with values that represent a start of a month.
 
 Example
 
@@ -68,7 +70,7 @@ Example
 end_of_month
 ~~~~~~~~~~~~
 
-Return a new datetime with values that represent a end of a month.
+Return a new `datetime.datetime` object with values that represent a end of a month.
 
 Example
 
@@ -118,10 +120,12 @@ Example
 time module
 -----------
 
+A set of `datetime.time` related functions.
+
 diff_time
 ~~~~~~~~~
 
-Calculates datetime.timedelta between two datetime.time values.
+Calculates `datetime.timedelta` between two `datetime.time` values.
 
 Example
 
@@ -135,6 +139,8 @@ Example
 
 timedelta module
 ----------------
+
+A set of `datetime.timedelta` related functions.
 
 timedelta_to_seconds
 ~~~~~~~~~~~~~~~~~~~~
@@ -190,6 +196,8 @@ Example
 
 tz module
 ---------
+
+A set of `dateutil.tz` related functions.
 
 to_utc
 ~~~~~~

@@ -1,11 +1,12 @@
-"""datetime.datetime and datetime.date related functions"""
+"""A set of datetime.datetime and datetime.date related functions"""
 from __future__ import absolute_import
 from datetime import timedelta, date, datetime
 
 
 def start_of_day(val):
     """
-    Return a new datetime with values that represent a start of a day.
+    Return a new datetime.datetime object with values that represent
+    a start of a day.
     :param val: Date to ...
     :type val: datetime.datetime | datetime.date
     :rtype: datetime.datetime
@@ -17,7 +18,8 @@ def start_of_day(val):
 
 def end_of_day(val):
     """
-    Return a new datetime with values that represent a end of a day.
+    Return a new datetime.datetime object with values that represent
+    a end of a day.
     :param val: Date to ...
     :type val: datetime.datetime | datetime.date
     :rtype: datetime.datetime
@@ -29,7 +31,8 @@ def end_of_day(val):
 
 def start_of_month(val):
     """
-    Return a new datetime with values that represent a start of a month.
+    Return a new datetime.datetime object with values that represent
+    a start of a month.
     :param val: Date to ...
     :type val: datetime.datetime | datetime.date
     :rtype: datetime.datetime
@@ -41,7 +44,8 @@ def start_of_month(val):
 
 def end_of_month(val):
     """
-    Return a new datetime with values that represent a end of a month.
+    Return a new datetime.datetime object with values that represent
+    a end of a month.
     :param val: Date to ...
     :type val: datetime.datetime | datetime.date
     :rtype: datetime.datetime
