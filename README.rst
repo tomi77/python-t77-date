@@ -23,12 +23,12 @@ Install via ``pip``
 datetime module
 ---------------
 
-A set of `datetime.datetime` and `datetime.date` related functions.
+A set of ``datetime.datetime`` and ``datetime.date`` related functions.
 
 start_of_day
 ~~~~~~~~~~~~
 
-Return a new `datetime.datetime` object with values that represent a start of a day.
+Return a new ``datetime.datetime`` object with values that represent a start of a day.
 
 Example
 
@@ -42,7 +42,7 @@ Example
 end_of_day
 ~~~~~~~~~~
 
-Return a new `datetime.datetime` object with values that represent a end of a day.
+Return a new ``datetime.datetime`` object with values that represent a end of a day.
 
 Example
 
@@ -56,7 +56,7 @@ Example
 start_of_month
 ~~~~~~~~~~~~~~
 
-Return a new `datetime.datetime` object with values that represent a start of a month.
+Return a new ``datetime.datetime`` object with values that represent a start of a month.
 
 Example
 
@@ -70,7 +70,7 @@ Example
 end_of_month
 ~~~~~~~~~~~~
 
-Return a new `datetime.datetime` object with values that represent a end of a month.
+Return a new ``datetime.datetime`` object with values that represent a end of a month.
 
 Example
 
@@ -120,12 +120,12 @@ Example
 time module
 -----------
 
-A set of `datetime.time` related functions.
+A set of ``datetime.time`` related functions.
 
 diff_time
 ~~~~~~~~~
 
-Calculates `datetime.timedelta` between two `datetime.time` values.
+Calculates ``datetime.timedelta`` between two ``datetime.time`` values.
 
 Example
 
@@ -140,12 +140,12 @@ Example
 timedelta module
 ----------------
 
-A set of `datetime.timedelta` related functions.
+A set of ``datetime.timedelta`` related functions.
 
 timedelta_to_seconds
 ~~~~~~~~~~~~~~~~~~~~
 
-Convert `datetime.timedelta` to seconds.
+Convert ``datetime.timedelta`` to seconds.
 
 Example
 
@@ -162,7 +162,7 @@ Example
 timedelta_to_str
 ~~~~~~~~~~~~~~~~
 
-String representation of `datetime.timedelta`.
+String representation of ``datetime.timedelta``.
 
 Example
 
@@ -179,7 +179,7 @@ Example
 parse_timedelta
 ~~~~~~~~~~~~~~~
 
-Parses a string and return a `datetime.timedelta`.
+Parses a string and return a ``datetime.timedelta``.
 
 Example
 
@@ -197,12 +197,12 @@ Example
 tz module
 ---------
 
-A set of `dateutil.tz` related functions.
+A set of ``dateutil.tz`` related functions.
 
 to_utc
 ~~~~~~
 
-Convert `datetime.datetime` to UTC.
+Convert ``datetime.datetime`` to UTC.
 
 Example
 
@@ -218,7 +218,7 @@ Example
 to_local
 ~~~~~~~~
 
-Convert `datetime.datetime` to local time zone.
+Convert ``datetime.datetime`` to local time zone.
 
 Example
 
